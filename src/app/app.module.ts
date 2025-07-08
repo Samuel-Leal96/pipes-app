@@ -12,6 +12,7 @@ import localeEsMX from "@angular/common/locales/es-MX";
 import localeFrCA from "@angular/common/locales/fr-CA";
 
 import { registerLocaleData } from "@angular/common";
+import { NavbarComponent } from "./components/navbar/navbar.component";
 
 registerLocaleData( localeEsMX );
 registerLocaleData( localeFrCA );
@@ -24,7 +25,8 @@ registerLocaleData( localeFrCA );
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    ButtonModule
+    ButtonModule,
+    NavbarComponent
 ],
   providers: [
     {
