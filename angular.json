@@ -35,7 +35,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "primeng/resources/themes/lara-dark-indigo/theme.css",
+              "primeng/resources/primeng.min.css",
+              "node_modules/primeflex/primeflex.min.css"
             ],
             "scripts": []
           },
