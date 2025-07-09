@@ -9,13 +9,15 @@ import { ButtonModule } from 'primeng/button';
 
 //Configuración del locale de la app
 import localeEsMX from "@angular/common/locales/es-MX";
-import localeFrCA from "@angular/common/locales/fr-CA";
+import localeFrCanada from "@angular/common/locales/fr-CA";
+import localeItaliano  from "@angular/common/locales/it";
 
 import { registerLocaleData } from "@angular/common";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 
 registerLocaleData( localeEsMX );
-registerLocaleData( localeFrCA );
+registerLocaleData( localeFrCanada );
+registerLocaleData( localeItaliano );
 
 @NgModule({
   declarations: [
