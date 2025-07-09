@@ -14,6 +14,7 @@ import localeItaliano  from "@angular/common/locales/it";
 
 import { registerLocaleData } from "@angular/common";
 import { NavbarComponent } from "./components/navbar/navbar.component";
+import { LocaleService } from './services/locale.service';
 
 registerLocaleData( localeEsMX );
 registerLocaleData( localeFrCanada );
@@ -32,7 +33,10 @@ registerLocaleData( localeItaliano );
 ],
   providers: [
     {
-      provide: LOCALE_ID, useValue: 'es-MX'
+      provide: LOCALE_ID,
+      // useValue: 'es-MX'
+      deps: [LocaleService],
+      useFactory: (localeService: LocaleService) => localeService.getLocale
     }
   ],
   bootstrap: [AppComponent]
