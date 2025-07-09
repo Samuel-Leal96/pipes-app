@@ -7,7 +7,11 @@
 
   <app-card title="i18nSelectPipe">
 
-    <p>Hola mundo desde el padre</p>
+    <p>Saludos {{client().name}}, es un placer {{ client().gender | i18nSelect : invitationMap}} a nuestro evento</p>
+
+    <button (click)="changeClient()" class="btn btn-primary">
+      Cambiar cliente
+    </button>
 
   </app-card>
 
