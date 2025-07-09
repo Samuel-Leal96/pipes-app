@@ -23,3 +23,61 @@
     <div class="stat-desc">{{ fullName() }}</div>
   </div>
 </div>
+
+<div class="divider"></div>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+  <div class="stat">
+    <div class="stat-title">Date Pipe</div>
+    <div class="stat-value">{{ customDate() | date }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Date Pipe | long | GMT-6</div>
+    <div class="stat-value">{{ customDate() | date: "long" : "GMT-6" }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+</div>
+
+<div class="divider"></div>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+  <div class="stat">
+    <div class="stat-title">Date: 'shortDate'</div>
+    <div class="stat-value">{{ customDate() | date : "LLL/yyyy" }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Date Pipe | short | GMT-6</div>
+    <div class="stat-value">{{ customDate() | date: "EEEE dd/MMMM/yyyy, h:mm a" : "GMT-6" }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+</div>
+
+
+<div class="divider"></div>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+  <div class="stat">
+    <div class="stat-title">Date</div>
+    <div class="stat-value">{{ customDate() | date : "dd/MM/yyyy" }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Date Pipe</div>
+    <div class="stat-value">{{ customDate() | date: "HH:mm:ss" }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Date Pipe</div>
+    <div class="stat-value">{{ customDate() | date: "EEEE d, MMMM" }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+</div>

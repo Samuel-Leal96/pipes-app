@@ -1,5 +1,5 @@
-import { LowerCasePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { DatePipe, LowerCasePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, effect, signal } from '@angular/core';
 
 @Component({
   selector: 'app-basic-page',
@@ -7,7 +7,8 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
   imports: [
     LowerCasePipe,
     UpperCasePipe,
-    TitleCasePipe
+    TitleCasePipe,
+    DatePipe
   ],
   templateUrl: './basic-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -16,6 +17,19 @@ export default class BasicPageComponent {
 
   nameLower = signal('samuel');
   nameUpper = signal('SAMUEL');
-  fullName = signal('SamUeL lEaL')
+  fullName = signal('SamUeL lEaL');
+
+  customDate = signal ( new Date() );
+
+  tickingDateEffect = effect((onCleanup)=>{
+    const interval = setInterval(() => {
+      this.customDate.set(new Date())
+      console.log('tic tak');
+    }, 1000);
+
+    onCleanup(()=>{
+      clearInterval(interval);
+    })
+  })
 
 }
