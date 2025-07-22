@@ -1,9 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { ToggleCasePipe } from '../pipes/toggle-case.pipe';
 
 @Component({
   selector: 'app-custom-page',
   standalone: true,
-  imports: [],
+  imports: [
+    ToggleCasePipe
+  ],
   templateUrl: './custom-page.component.html',
 })
-export default class CustomPageComponent { }
+export default class CustomPageComponent {
+
+  name = signal('Samuel Leal');
+
+  upperCase = signal(true);
+
+}
